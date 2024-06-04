@@ -48,6 +48,7 @@ const configs = [
   ),
 
   {
+    name: "js/ts",
     files: ["**/*.js", "**/*.ts"],
     languageOptions: {
       ecmaVersion: 2021,
@@ -62,6 +63,7 @@ const configs = [
     },
   },
   {
+    name: "vue",
     files: ["**/*.vue"],
     languageOptions: {
       parser: vueParser,
