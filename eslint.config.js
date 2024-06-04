@@ -35,6 +35,7 @@ const jsRules = {
   }],
   '@stylistic/js/arrow-parens': ['error', 'always'], // 화살표 함수의 파라미터에 괄호 강제
   '@stylistic/js/no-trailing-spaces': 'error',
+  '@stylistic/js/brace-style': ['error', '1tbs', { 'allowSingleLine': true }], // 함수 이름 뒤에 {를 오도록 설정
 };
 
 const configs = [

@@ -28,6 +28,10 @@ const h = async () => {
   console.log('h');
 };
 
+function hello() {
+
+}
+
 </script>
 
 <template>
