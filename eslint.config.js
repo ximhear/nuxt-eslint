@@ -2,14 +2,11 @@ import withNuxt from './.nuxt/eslint.config.mjs';
 
 // eslint.config.js
 
-import { FlatCompat } from "@eslint/eslintrc";
 import vue from "eslint-plugin-vue";
 import vueParser from "vue-eslint-parser";
 import typescript from "@typescript-eslint/parser";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import stylisticJs from '@stylistic/eslint-plugin-js';
-
-const compat = new FlatCompat();
 
 const jsRules = {
   "@typescript-eslint/no-unused-vars": "warn",
@@ -38,16 +35,16 @@ const jsRules = {
   '@stylistic/js/brace-style': ['error', '1tbs', { 'allowSingleLine': true }], // 함수 이름 뒤에 {를 오도록 설정
 };
 
+// console.log(compat.extends("plugin:vue/vue3-stongly-recommended"));
+// console.log(typescriptPlugin.configs['eslint-recommended']);
+
 const configs = [
   // JS 및 TS 기본 규칙
   {
     ignores: ["node_modules/**", "dist/**", ".nuxt/**", "coverage/**"],
   },
-  ...compat.extends(
-    "plugin:vue/vue3-recommended",
-    "plugin:@typescript-eslint/recommended",
-  ),
-
+  ...vue.configs['flat/recommended'],
+  ...typescriptPlugin.configs['eslint-recommended']['overrides'],
   {
     name: "js/ts",
     files: ["**/*.js", "**/*.ts"],
@@ -119,5 +116,7 @@ const configs = [
     },
   },
 ];
+
+// console.log(configs);
 
 export default withNuxt(configs);

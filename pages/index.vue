@@ -36,8 +36,11 @@ function hello() {
 
 <template>
   <div>
-    <div>
-    </div>
+    <div
+      b="3"
+      a="2"
+      v-html="<div>hello</div>"
+    ></div>
     <h1>Nuxt Routing set up successfully!</h1>
     <p>Current route: {{ route.path }}</p>
     <a
