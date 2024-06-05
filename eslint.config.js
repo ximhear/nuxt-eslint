@@ -14,6 +14,7 @@ const jsRules = {
   "@typescript-eslint/no-explicit-any": "off",
   '@stylistic/js/no-multi-spaces': 'error', // 연속된 빈칸 제거
   '@stylistic/js/semi': ['error', 'always'],
+  '@stylistic/js/indent': ['error', 2],
   '@stylistic/js/comma-dangle': ['error', 'always-multiline'],
   '@stylistic/js/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }],
   '@stylistic/js/space-before-function-paren': ['error', {
@@ -57,7 +58,7 @@ const configs = [
       '@stylistic/js': stylisticJs,
     },
     rules: {
-        ...jsRules,
+      ...jsRules,
     },
   },
   {
