@@ -34,6 +34,7 @@ const jsRules = {
   '@stylistic/js/arrow-parens': ['error', 'always'], // 화살표 함수의 파라미터에 괄호 강제
   '@stylistic/js/no-trailing-spaces': 'error',
   '@stylistic/js/brace-style': ['error', '1tbs', { 'allowSingleLine': true }], // 함수 이름 뒤에 {를 오도록 설정
+  '@stylistic/js/space-before-blocks': ['error', 'always'], // 블록 앞에 공백 강제
 };
 
 // console.log(compat.extends("plugin:vue/vue3-stongly-recommended"));
@@ -99,7 +100,7 @@ const configs = [
         {
           html: {
             void: "always",
-            normal: "never",
+            normal: "always",
             component: "always",
           },
           svg: "always",
@@ -113,6 +114,11 @@ const configs = [
       }],
       'vue/no-multi-spaces': ['error', {
         "ignoreProperties": false,
+      }],
+      'vue/html-closing-bracket-spacing': ['error', {
+        'startTag': 'never',
+        'endTag': 'never',
+        'selfClosingTag': 'always',
       }],
     },
   },
