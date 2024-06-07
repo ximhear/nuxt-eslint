@@ -35,6 +35,7 @@ const jsRules = {
   '@stylistic/js/no-trailing-spaces': 'error',
   '@stylistic/js/brace-style': ['error', '1tbs', { 'allowSingleLine': true }], // 함수 이름 뒤에 {를 오도록 설정
   '@stylistic/js/space-before-blocks': ['error', 'always'], // 블록 앞에 공백 강제
+  'space-in-parens': ['error', 'never'], // 괄호 내부 공백 제거
 };
 
 // console.log(compat.extends("plugin:vue/vue3-stongly-recommended"));
