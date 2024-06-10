@@ -6,23 +6,23 @@ import vue from "eslint-plugin-vue";
 import vueParser from "vue-eslint-parser";
 import typescript from "@typescript-eslint/parser";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-import stylisticJs from '@stylistic/eslint-plugin-js';
+import stylistic from '@stylistic/eslint-plugin';
 
 const jsRules = {
   "@typescript-eslint/no-unused-vars": "warn",
   "@typescript-eslint/explicit-function-return-type": "off",
   "@typescript-eslint/no-explicit-any": "off",
-  '@stylistic/js/no-multi-spaces': 'error', // 연속된 빈칸 제거
-  '@stylistic/js/semi': ['error', 'always'],
-  '@stylistic/js/indent': ['error', 2],
-  '@stylistic/js/comma-dangle': ['error', 'always-multiline'],
-  '@stylistic/js/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }],
-  '@stylistic/js/space-before-function-paren': ['error', {
+  '@stylistic/no-multi-spaces': 'error', // 연속된 빈칸 제거
+  '@stylistic/semi': ['error', 'always'],
+  '@stylistic/indent': ['error', 2],
+  '@stylistic/comma-dangle': ['error', 'always-multiline'],
+  '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }],
+  '@stylistic/space-before-function-paren': ['error', {
     'anonymous': 'always',
     'named': 'never',
     'asyncArrow': 'always',
   }],
-  '@stylistic/js/keyword-spacing': ['error', {
+  '@stylistic/keyword-spacing': ['error', {
     'before': true,
     'after': true,
     'overrides': {
@@ -31,11 +31,12 @@ const jsRules = {
       'while': { 'after': true },
     },
   }],
-  '@stylistic/js/arrow-parens': ['error', 'always'], // 화살표 함수의 파라미터에 괄호 강제
-  '@stylistic/js/no-trailing-spaces': 'error',
-  '@stylistic/js/brace-style': ['error', '1tbs', { 'allowSingleLine': true }], // 함수 이름 뒤에 {를 오도록 설정
-  '@stylistic/js/space-before-blocks': ['error', 'always'], // 블록 앞에 공백 강제
+  '@stylistic/arrow-parens': ['error', 'always'], // 화살표 함수의 파라미터에 괄호 강제
+  '@stylistic/no-trailing-spaces': 'error',
+  '@stylistic/brace-style': ['error', '1tbs', { 'allowSingleLine': true }], // 함수 이름 뒤에 {를 오도록 설정
+  '@stylistic/space-before-blocks': ['error', 'always'], // 블록 앞에 공백 강제
   'space-in-parens': ['error', 'never'], // 괄호 내부 공백 제거
+  'object-curly-spacing': ['error', 'always'],
 };
 
 // console.log(compat.extends("plugin:vue/vue3-stongly-recommended"));
@@ -57,7 +58,7 @@ const configs = [
     },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
-      '@stylistic/js': stylisticJs,
+      '@stylistic': stylistic,
     },
     rules: {
       ...jsRules,
@@ -77,14 +78,13 @@ const configs = [
     plugins: {
       vue,
       "@typescript-eslint": typescriptPlugin,
-      '@stylistic/js': stylisticJs,
+      '@stylistic': stylistic,
     },
     rules: {
       ...jsRules,
       "vue/multi-word-component-names": "off",
       "vue/no-multiple-template-root": "off",
       "vue/no-v-model-argument": "off",
-      "vue/no-unused-vars": "warn",
       "vue/max-attributes-per-line": [
         "error",
         {
@@ -101,7 +101,7 @@ const configs = [
         {
           html: {
             void: "always",
-            normal: "always",
+            normal: "never",
             component: "always",
           },
           svg: "always",
